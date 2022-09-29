@@ -1,13 +1,14 @@
-require("@testing-library/jest-dom");
-const cssToObject = require("@uppercod/css-to-object").cssToObject;
-const renderStatsCard = require("../src/cards/stats-card");
-
-const {
+import {
   getByTestId,
-  queryByTestId,
   queryAllByTestId,
-} = require("@testing-library/dom");
-const themes = require("../themes");
+  queryByTestId,
+} from "@testing-library/dom";
+import { cssToObject } from "@uppercod/css-to-object";
+import { renderStatsCard } from "../src/cards/stats-card.js";
+// adds special assertions like toHaveTextContent
+import "@testing-library/jest-dom";
+
+import { themes } from "../themes/index.js";
 
 describe("Test renderStatsCard", () => {
   const stats = {
