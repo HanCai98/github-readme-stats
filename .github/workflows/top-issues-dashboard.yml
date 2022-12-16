@@ -6,7 +6,7 @@ on:
 jobs:
   showAndLabelTopIssues:
     name: Update top issues Dashboard.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Run top issues action
         uses: rickstaa/top-issues-action@v1
