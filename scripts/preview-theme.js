@@ -26,10 +26,13 @@ const FAIL_TEXT = `
   \rUnfortunately, your theme PR contains an error or does not adhere to our [theme guidelines](https://github.com/anuraghazra/github-readme-stats/blob/master/CONTRIBUTING.md#themes-contribution). Please fix the issues below, and we will review your\
   \r PR again. This pull request will **automatically close in 20 days** if no changes are made. After this time, you must re-open the PR for it to be reviewed.
 `;
-const THEME_CONTRIB_GUIDELINESS = `
+const THEME_CONTRIB_GUIDELINES = `
   \rHi, thanks for the theme contribution. Please read our theme [contribution guidelines](https://github.com/anuraghazra/github-readme-stats/blob/master/CONTRIBUTING.md#themes-contribution).
-  \rWe are currently only accepting color combinations from any VSCode theme or themes with good colour combinations to minimize bloating the themes collection.
 
+  \r> **Warning**
+  \r> Keep in mind that we already have a vast collection of different themes. To keep their number manageable, we began to add only themes supported by the community. Your pull request with theme addition will be merged once we get enough positive feedback from the community in the form of thumbs up (see [#1935](https://github.com/anuraghazra/github-readme-stats/issues/1935#top-themes-prs)). Remember that you can also support themes of other contributors that you liked to speed up their merge.
+
+  \r> **Note**
   \r> Also, note that if this theme is exclusively for your personal use, then instead of adding it to our theme collection, you can use card [customization options](https://github.com/anuraghazra/github-readme-stats#customization).
 `;
 const COLOR_PROPS = {
@@ -363,7 +366,7 @@ export const run = async () => {
     debug(`Context: ${inspect(github.context)}`);
     let commentBody = `
       \r# ${COMMENT_TITLE}
-      \r${THEME_CONTRIB_GUIDELINESS}
+      \r${THEME_CONTRIB_GUIDELINES}
     `;
     const ccc = new ColorContrastChecker();
     OCTOKIT = github.getOctokit(getGithubToken());
